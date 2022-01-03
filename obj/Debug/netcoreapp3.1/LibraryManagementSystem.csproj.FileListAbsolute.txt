@@ -17,3 +17,14 @@ C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreap
 C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.pdb
 C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.genruntimeconfig.cache
 C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.MainForm.resources
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.StudentForm.resources
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.BooksForm.resources
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.LibrarianForm.resources
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.IssueBookForm.resources
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.csproj.CopyComplete

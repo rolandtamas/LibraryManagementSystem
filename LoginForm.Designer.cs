@@ -41,7 +41,7 @@ namespace LibraryManagementSystem
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(200, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(203, 102);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 73);
             this.pictureBox1.TabIndex = 0;
@@ -50,10 +50,10 @@ namespace LibraryManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("OpenSymbol", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(187, 178);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 35);
+            this.label1.Size = new System.Drawing.Size(90, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Login";
             // 
@@ -81,6 +81,7 @@ namespace LibraryManagementSystem
             this.LoginButton.TabIndex = 4;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // LoginForm
             // 
