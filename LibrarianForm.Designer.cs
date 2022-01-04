@@ -47,13 +47,21 @@ namespace LibraryManagementSystem
             // 
             // LibrariansDataGrid
             // 
+            this.LibrariansDataGrid.AllowUserToAddRows = false;
+            this.LibrariansDataGrid.AllowUserToDeleteRows = false;
+            this.LibrariansDataGrid.AllowUserToResizeColumns = false;
+            this.LibrariansDataGrid.AllowUserToResizeRows = false;
             this.LibrariansDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LibrariansDataGrid.Location = new System.Drawing.Point(399, 122);
+            this.LibrariansDataGrid.MultiSelect = false;
             this.LibrariansDataGrid.Name = "LibrariansDataGrid";
+            this.LibrariansDataGrid.ReadOnly = true;
             this.LibrariansDataGrid.RowHeadersWidth = 51;
             this.LibrariansDataGrid.RowTemplate.Height = 29;
+            this.LibrariansDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.LibrariansDataGrid.Size = new System.Drawing.Size(691, 297);
             this.LibrariansDataGrid.TabIndex = 27;
+            this.LibrariansDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LibrariansDataGrid_CellContentClick);
             // 
             // button2
             // 
@@ -63,6 +71,7 @@ namespace LibraryManagementSystem
             this.button2.TabIndex = 26;
             this.button2.Text = "Edit Librarian";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -105,6 +114,7 @@ namespace LibraryManagementSystem
             // 
             this.ID.Location = new System.Drawing.Point(133, 122);
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Size = new System.Drawing.Size(75, 27);
             this.ID.TabIndex = 16;
             // 

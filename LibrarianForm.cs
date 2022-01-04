@@ -13,7 +13,7 @@ namespace LibraryManagementSystem
     public partial class LibrarianForm : Form
     {
 
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\database\Books.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\database\UniversityLibrary.mdf;Integrated Security=True;Connect Timeout=30");
         public LibrarianForm()
         {
             InitializeComponent();
@@ -22,14 +22,14 @@ namespace LibraryManagementSystem
         //Add new librarian to database
         private void button1_Click(object sender, EventArgs e)
         {
-            if(ID.Text.Equals("") || FullNameRegistration.Text.Equals("") || PasswordRegistration.Text.Equals("") || PhoneRegistration.Text.Equals(""))
+            if(FullNameRegistration.Text.Equals("") || PasswordRegistration.Text.Equals("") || PhoneRegistration.Text.Equals(""))
             {
                 MessageBox.Show("Missing Information","Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("insert into LibrarianTable values("+ID.Text+",'"+FullNameRegistration.Text+"','"+PasswordRegistration.Text+"','"+PhoneRegistration.Text+"')");
+                SqlCommand command = new SqlCommand("insert into LibrarianTable (LibrarianName, LibrarianPassword, LibrarianPhone) values('"+FullNameRegistration.Text+"','"+PasswordRegistration.Text+"','"+PhoneRegistration.Text+"')");
                 command.Connection = connection;
                 command.ExecuteNonQuery();
                 MessageBox.Show("Librarian added successfully!");
@@ -72,6 +72,33 @@ namespace LibraryManagementSystem
                 connection.Close();
                 PopulateDataGrid();
                 MessageBox.Show("Librarian deleted successfully!");
+            }
+        }
+
+        //Select content of cell and complete text boxes
+        private void LibrariansDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ID.Text = LibrariansDataGrid.SelectedRows[0].Cells[0].Value.ToString();
+            FullNameRegistration.Text = LibrariansDataGrid.SelectedRows[0].Cells[1].Value.ToString();
+            PasswordRegistration.Text = LibrariansDataGrid.SelectedRows[0].Cells[2].Value.ToString();
+            PhoneRegistration.Text = LibrariansDataGrid.SelectedRows[0].Cells[3].Value.ToString();
+        }
+        //Update librarian
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ID.Text.Equals("") || FullNameRegistration.Text.Equals("") || PasswordRegistration.Text.Equals("") || PhoneRegistration.Text.Equals(""))
+            {
+                MessageBox.Show("Missing Information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("update LibrarianTable set LibrarianName='"+FullNameRegistration.Text+"',LibrarianPassword='" + PasswordRegistration.Text+"',LibrarianPhone='"+PhoneRegistration.Text+"' where LibrarianID='"+ID.Text+"';");
+                command.Connection = connection;
+                command.ExecuteNonQuery();
+                MessageBox.Show("Librarian updated successfully!");
+                connection.Close();
+                PopulateDataGrid();
             }
         }
     }

@@ -43,5 +43,22 @@ namespace LibraryManagementSystem
             IssueBookForm issueBookForm = new IssueBookForm();
             issueBookForm.Show();
         }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            switch(MessageBox.Show(this, "Are you sure you want to close?", "Close Window", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                case DialogResult.Yes:
+                    Application.Exit();
+                    break;
+            }
+        }
     }
 }

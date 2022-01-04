@@ -69,9 +69,11 @@ namespace LibraryManagementSystem
             // 
             this.PasswordTextBox.Location = new System.Drawing.Point(135, 288);
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.PlaceholderText = "Password";
             this.PasswordTextBox.Size = new System.Drawing.Size(199, 27);
             this.PasswordTextBox.TabIndex = 3;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
             // LoginButton
             // 

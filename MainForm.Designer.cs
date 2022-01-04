@@ -119,6 +119,7 @@ namespace LibraryManagementSystem
             this.ClientSize = new System.Drawing.Size(958, 523);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "University Library Management System";
             this.panel1.ResumeLayout(false);
