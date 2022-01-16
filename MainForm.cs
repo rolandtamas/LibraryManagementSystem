@@ -19,8 +19,7 @@ namespace LibraryManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             StudentForm studentForm = new StudentForm();
-            studentForm.Show();
-            //this.Hide();
+            studentForm.Show();            
         }
 
         //View Available Books
@@ -44,6 +43,13 @@ namespace LibraryManagementSystem
             issueBookForm.Show();
         }
 
+        // View Returned Books
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ReturnBookForm returnBookForm = new ReturnBookForm();
+            returnBookForm.Show();
+        }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -59,6 +65,6 @@ namespace LibraryManagementSystem
                     Application.Exit();
                     break;
             }
-        }
+        }        
     }
 }

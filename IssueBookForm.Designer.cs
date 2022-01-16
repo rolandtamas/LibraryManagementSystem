@@ -33,13 +33,13 @@ namespace LibraryManagementSystem
             this.ID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.StdCombo = new System.Windows.Forms.ComboBox();
             this.DepartmentIssue = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PhoneIssue = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.BookCombo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -82,18 +82,20 @@ namespace LibraryManagementSystem
             this.label3.TabIndex = 19;
             this.label3.Text = "Issue To:";
             // 
-            // comboBox1
+            // StdCombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 142);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 20;
+            this.StdCombo.FormattingEnabled = true;
+            this.StdCombo.Location = new System.Drawing.Point(118, 142);
+            this.StdCombo.Name = "StdCombo";
+            this.StdCombo.Size = new System.Drawing.Size(151, 28);
+            this.StdCombo.TabIndex = 20;
+            this.StdCombo.SelectedIndexChanged += new System.EventHandler(this.StdCombo_SelectedIndexChanged);
             // 
             // DepartmentIssue
             // 
             this.DepartmentIssue.Location = new System.Drawing.Point(118, 184);
             this.DepartmentIssue.Name = "DepartmentIssue";
+            this.DepartmentIssue.ReadOnly = true;
             this.DepartmentIssue.Size = new System.Drawing.Size(151, 27);
             this.DepartmentIssue.TabIndex = 22;
             // 
@@ -106,12 +108,13 @@ namespace LibraryManagementSystem
             this.label4.TabIndex = 21;
             this.label4.Text = "Department";
             // 
-            // textBox1
+            // PhoneIssue
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 224);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 27);
-            this.textBox1.TabIndex = 24;
+            this.PhoneIssue.Location = new System.Drawing.Point(118, 224);
+            this.PhoneIssue.Name = "PhoneIssue";
+            this.PhoneIssue.ReadOnly = true;
+            this.PhoneIssue.Size = new System.Drawing.Size(151, 27);
+            this.PhoneIssue.TabIndex = 24;
             // 
             // label5
             // 
@@ -131,13 +134,13 @@ namespace LibraryManagementSystem
             this.label6.TabIndex = 25;
             this.label6.Text = "Book";
             // 
-            // comboBox2
+            // BookCombo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(118, 266);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 26;
+            this.BookCombo.FormattingEnabled = true;
+            this.BookCombo.Location = new System.Drawing.Point(118, 266);
+            this.BookCombo.Name = "BookCombo";
+            this.BookCombo.Size = new System.Drawing.Size(151, 28);
+            this.BookCombo.TabIndex = 26;
             // 
             // label7
             // 
@@ -163,6 +166,7 @@ namespace LibraryManagementSystem
             this.button1.TabIndex = 29;
             this.button1.Text = "Issue Book";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // IssuedBooksDataGrid
             // 
@@ -171,31 +175,32 @@ namespace LibraryManagementSystem
             this.IssuedBooksDataGrid.Name = "IssuedBooksDataGrid";
             this.IssuedBooksDataGrid.RowHeadersWidth = 51;
             this.IssuedBooksDataGrid.RowTemplate.Height = 29;
-            this.IssuedBooksDataGrid.Size = new System.Drawing.Size(402, 345);
-            this.IssuedBooksDataGrid.TabIndex = 30;
+            this.IssuedBooksDataGrid.Size = new System.Drawing.Size(601, 345);
+            this.IssuedBooksDataGrid.TabIndex = 30;            
             // 
             // IssueBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1002, 450);
             this.Controls.Add(this.IssuedBooksDataGrid);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.BookCombo);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PhoneIssue);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DepartmentIssue);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.StdCombo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "IssueBookForm";
             this.Text = "IssueBookForm";
+            this.Load += new System.EventHandler(this.IssueBookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IssuedBooksDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,13 +213,13 @@ namespace LibraryManagementSystem
         private System.Windows.Forms.TextBox ID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox StdCombo;
         private System.Windows.Forms.TextBox DepartmentIssue;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PhoneIssue;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox BookCombo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;

@@ -71,20 +71,33 @@ namespace LibraryManagementSystem
             }
             else
             {
-                //connection.Open();
-                //SqlCommand command = new SqlCommand("update StudentsTable set LibrarianName='" + FullNameRegistration.Text + "',LibrarianPassword='" + PasswordRegistration.Text + "',LibrarianPhone='" + PhoneRegistration.Text + "' where LibrarianID='" + ID.Text + "';");
-                //command.Connection = connection;
-                //command.ExecuteNonQuery();
-                //MessageBox.Show("Librarian updated successfully!");
-                //connection.Close();
-                //PopulateDataGrid();
+                connection.Open();
+                SqlCommand command = new SqlCommand("update StudentsTable set StudName='" + FullNameRegistration.Text + "',StudDept='" + DepartmentRegistration.Text + "',StudSem='" + SemesterCombo.SelectedItem.ToString() + "',StudPhone='" + PhoneRegistration.Text + "' where StudID='" + ID.Text + "';");
+                command.Connection = connection;
+                command.ExecuteNonQuery();
+                MessageBox.Show("Student updated successfully!");
+                connection.Close();
+                PopulateDataGrid();
             }
         }
 
         //Delete a student
         private void button3_Click(object sender, EventArgs e)
         {
-
+            if (ID.Text.Equals(""))
+            {
+                MessageBox.Show("Please enter an ID in the textbox", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("delete from StudentsTable where StudID = " + ID.Text + ";");
+                command.Connection = connection;
+                command.ExecuteNonQuery();
+                MessageBox.Show("Student updated successfully!");
+                connection.Close();
+                PopulateDataGrid();
+            }
         }
     }
 }

@@ -28,3 +28,4 @@ C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreap
 C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.csproj.CopyComplete
+C:\Users\Roland\Desktop\Facultate\SE\LibraryManagementSystem\obj\Debug\netcoreapp3.1\LibraryManagementSystem.ReturnBookForm.resources
