@@ -36,7 +36,7 @@ namespace LibraryManagementSystem
         private void FillBooks()
         {
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT BookTitle FROM BooksTable", connection);
+            SqlCommand command = new SqlCommand("SELECT BookTitle FROM BooksTable where Quantity>"+0+";", connection);
             SqlDataReader dr;
             dr = command.ExecuteReader();
             while (dr.Read())
@@ -54,6 +54,24 @@ namespace LibraryManagementSystem
             PopulateDataGrid();
         }
 
+        private void UpdateBookQuantity()
+        {
+            connection.Open();
+            int Quantity=0, newQuantity;
+            SqlCommand command = new SqlCommand("Select * from BooksTable where BookTitle='"+BookCombo.SelectedItem.ToString()+"';",connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                Quantity = Convert.ToInt32(row["Quantity"].ToString());                
+            }
+            newQuantity = Quantity - 1;
+            SqlCommand updateCommand = new SqlCommand("update BooksTable set Quantity='" + newQuantity.ToString() + "' where BookTitle='" + BookCombo.SelectedItem.ToString() + "';", connection);
+            updateCommand.ExecuteNonQuery();
+            connection.Close();
+        }
+
         //Complete textboxes with student data
         private void StdCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -64,6 +82,7 @@ namespace LibraryManagementSystem
             adapter.Fill(dt);
             foreach(DataRow row in dt.Rows)
             {
+                StudentID.Text = row["StudId"].ToString();
                 DepartmentIssue.Text = row["StudDept"].ToString();
                 PhoneIssue.Text = row["StudPhone"].ToString();
             }
@@ -74,17 +93,18 @@ namespace LibraryManagementSystem
         // Issue a book
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ID.Text.Equals("") || StdCombo.SelectedItem.Equals("") || DepartmentIssue.Text.Equals("") || PhoneIssue.Text.Equals("") || BookCombo.SelectedItem.Equals("") || dateTimePicker1.Value.Equals(""))
+            if (StudentID.Text.Equals("") || ID.Text.Equals("") || StdCombo.SelectedItem.Equals("") || DepartmentIssue.Text.Equals("") || PhoneIssue.Text.Equals("") || BookCombo.SelectedItem.Equals("") || dateTimePicker1.Value.Equals(""))
             {
                 MessageBox.Show(this, "Some information is missing, please try again.", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("Insert into IssuedBooksTable values('" + ID.Text + "', '" + StdCombo.SelectedItem.ToString()+"', '"+DepartmentIssue.Text+"', '"+PhoneIssue.Text+"', '"+BookCombo.SelectedItem.ToString()+"', '"+dateTimePicker1.Value+"');", connection);
+                SqlCommand command = new SqlCommand("Insert into IssuedBooksTable values('" + ID.Text + "', '" + StudentID.Text + "', '" + StdCombo.SelectedItem.ToString()+"', '"+DepartmentIssue.Text+"', '"+PhoneIssue.Text+"', '"+BookCombo.SelectedItem.ToString()+"', '"+dateTimePicker1.Value+"');", connection);
                 command.ExecuteNonQuery();
                 MessageBox.Show(this, "Book issued successfully");
                 connection.Close();
+                UpdateBookQuantity();
                 PopulateDataGrid();
             }
         }

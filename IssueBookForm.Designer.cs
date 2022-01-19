@@ -44,6 +44,8 @@ namespace LibraryManagementSystem
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.IssuedBooksDataGrid = new System.Windows.Forms.DataGridView();
+            this.StudentID = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.IssuedBooksDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@ namespace LibraryManagementSystem
             // 
             // ID
             // 
-            this.ID.Location = new System.Drawing.Point(118, 94);
+            this.ID.Location = new System.Drawing.Point(118, 128);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(75, 27);
             this.ID.TabIndex = 18;
@@ -67,7 +69,7 @@ namespace LibraryManagementSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 94);
+            this.label2.Location = new System.Drawing.Point(19, 128);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 17;
@@ -76,7 +78,7 @@ namespace LibraryManagementSystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 142);
+            this.label3.Location = new System.Drawing.Point(19, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 19;
@@ -85,7 +87,7 @@ namespace LibraryManagementSystem
             // StdCombo
             // 
             this.StdCombo.FormattingEnabled = true;
-            this.StdCombo.Location = new System.Drawing.Point(118, 142);
+            this.StdCombo.Location = new System.Drawing.Point(118, 161);
             this.StdCombo.Name = "StdCombo";
             this.StdCombo.Size = new System.Drawing.Size(151, 28);
             this.StdCombo.TabIndex = 20;
@@ -93,7 +95,7 @@ namespace LibraryManagementSystem
             // 
             // DepartmentIssue
             // 
-            this.DepartmentIssue.Location = new System.Drawing.Point(118, 184);
+            this.DepartmentIssue.Location = new System.Drawing.Point(118, 228);
             this.DepartmentIssue.Name = "DepartmentIssue";
             this.DepartmentIssue.ReadOnly = true;
             this.DepartmentIssue.Size = new System.Drawing.Size(151, 27);
@@ -102,7 +104,7 @@ namespace LibraryManagementSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 187);
+            this.label4.Location = new System.Drawing.Point(6, 228);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 21;
@@ -110,7 +112,7 @@ namespace LibraryManagementSystem
             // 
             // PhoneIssue
             // 
-            this.PhoneIssue.Location = new System.Drawing.Point(118, 224);
+            this.PhoneIssue.Location = new System.Drawing.Point(118, 262);
             this.PhoneIssue.Name = "PhoneIssue";
             this.PhoneIssue.ReadOnly = true;
             this.PhoneIssue.Size = new System.Drawing.Size(151, 27);
@@ -119,7 +121,7 @@ namespace LibraryManagementSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 227);
+            this.label5.Location = new System.Drawing.Point(12, 262);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 20);
             this.label5.TabIndex = 23;
@@ -128,7 +130,7 @@ namespace LibraryManagementSystem
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 266);
+            this.label6.Location = new System.Drawing.Point(21, 295);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 25;
@@ -137,7 +139,7 @@ namespace LibraryManagementSystem
             // BookCombo
             // 
             this.BookCombo.FormattingEnabled = true;
-            this.BookCombo.Location = new System.Drawing.Point(118, 266);
+            this.BookCombo.Location = new System.Drawing.Point(118, 295);
             this.BookCombo.Name = "BookCombo";
             this.BookCombo.Size = new System.Drawing.Size(151, 28);
             this.BookCombo.TabIndex = 26;
@@ -145,7 +147,7 @@ namespace LibraryManagementSystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 309);
+            this.label7.Location = new System.Drawing.Point(23, 334);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 20);
             this.label7.TabIndex = 27;
@@ -153,7 +155,7 @@ namespace LibraryManagementSystem
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(118, 309);
+            this.dateTimePicker1.Location = new System.Drawing.Point(118, 334);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(239, 27);
             this.dateTimePicker1.TabIndex = 28;
@@ -176,13 +178,32 @@ namespace LibraryManagementSystem
             this.IssuedBooksDataGrid.RowHeadersWidth = 51;
             this.IssuedBooksDataGrid.RowTemplate.Height = 29;
             this.IssuedBooksDataGrid.Size = new System.Drawing.Size(601, 345);
-            this.IssuedBooksDataGrid.TabIndex = 30;            
+            this.IssuedBooksDataGrid.TabIndex = 30;
+            // 
+            // StudentID
+            // 
+            this.StudentID.Location = new System.Drawing.Point(118, 195);
+            this.StudentID.Name = "StudentID";
+            this.StudentID.ReadOnly = true;
+            this.StudentID.Size = new System.Drawing.Size(151, 27);
+            this.StudentID.TabIndex = 31;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(10, 198);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 20);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Student ID";
             // 
             // IssueBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 450);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.StudentID);
             this.Controls.Add(this.IssuedBooksDataGrid);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
@@ -224,5 +245,7 @@ namespace LibraryManagementSystem
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView IssuedBooksDataGrid;
+        private System.Windows.Forms.TextBox StudentID;
+        private System.Windows.Forms.Label label8;
     }
 }

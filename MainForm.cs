@@ -52,17 +52,13 @@ namespace LibraryManagementSystem
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
             switch(MessageBox.Show(this, "Are you sure you want to close?", "Close Window", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     e.Cancel = true;
                     break;
                 case DialogResult.Yes:
-                    Application.Exit();
+                    // close the application; do nothing since its in the form closing method
                     break;
             }
         }        
